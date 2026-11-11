@@ -1,0 +1,2392 @@
+
+/* =========================================
+   GLOWWELL BEAUTY CLINIC
+   Main Website Stylesheet
+   ========================================= */
+
+/* 1. Design colours and variables */
+:root {
+    --primary: #684354;
+    --primary-dark: #482e3d;
+    --rose: #c78f9b;
+    --rose-light: #f5e8e9;
+    --cream: #fbf8f4;
+    --white: #ffffff;
+    --gold: #bd9b68;
+    --text: #393238;
+    --muted: #82777d;
+    --border: #e9dfe2;
+    --success: #397755;
+    --danger: #a33e4b;
+    --shadow: 0 14px 40px rgba(72, 46, 61, 0.09);
+}
+
+/* 2. General reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 48px 20px 70px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, #f6e8e9, transparent 35%),
+        var(--cream);
+}
+
+/* 3. Headings */
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--primary-dark);
+    line-height: 1.25;
+}
+
+body > h1 {
+    max-width: 850px;
+    margin: 24px auto 14px;
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+body > h2 {
+    width: min(100%, 760px);
+    margin: 38px auto 18px;
+    padding: 20px 26px;
+    background: var(--white);
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    font-size: 1.65rem;
+}
+
+body > h3 {
+    width: min(100%, 760px);
+    margin: 25px auto 10px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* 4. Paragraphs */
+body > p {
+    max-width: 760px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+body > p:first-of-type {
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+/* 5. Forms and form cards */
+body > form {
+    width: min(100%, 530px);
+    margin: 35px auto 22px;
+    padding: 36px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+/* Hide the old HTML line breaks */
+form br {
+    display: none;
+}
+
+form label {
+    display: block;
+    margin: 0 0 7px;
+    color: var(--primary-dark);
+    font-size: 0.94rem;
+    font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fffdfc;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.96rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--rose);
+    box-shadow: 0 0 0 3px rgba(199, 143, 155, 0.18);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #a69ba0;
+}
+
+/* 6. Buttons */
+button {
+    display: inline-block;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 9px;
+    background: var(--primary);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+form button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* 7. Links */
+a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--rose);
+    text-decoration: underline;
+}
+
+/* 8. Error and success messages */
+div[role="alert"] {
+    width: min(100%, 530px);
+    margin: 20px auto;
+    padding: 16px 20px;
+    border: 1px solid #e7b8bf;
+    border-radius: 10px;
+    background: #fff0f1;
+    color: var(--danger);
+}
+
+div[role="status"] {
+    width: min(100%, 530px);
+    margin: 20px auto;
+    padding: 16px 20px;
+    border: 1px solid #b8d8c3;
+    border-radius: 10px;
+    background: #eef8f1;
+    color: var(--success);
+}
+
+/* 9. Dashboard logout link */
+body > p:last-of-type a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    border: 1px solid var(--rose);
+    border-radius: 8px;
+    background: var(--rose-light);
+}
+
+/* 10. Responsive layout */
+@media (max-width: 600px) {
+    body {
+        padding: 28px 15px 45px;
+    }
+
+    body > h1 {
+        font-size: 2rem;
+    }
+
+    body > form {
+        padding: 25px 20px;
+    }
+
+    body > h2 {
+        padding: 17px;
+        font-size: 1.4rem;
+    }
+}
+
+/* =========================================
+   GLOWWELL SERVICES CATALOGUE
+   ========================================= */
+
+.site-header {
+    max-width: 1150px;
+    margin: 0 auto 35px;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.brand {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: var(--rose);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    font-size: 0.93rem;
+}
+
+.page-shell {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+}
+
+.hero-panel {
+    padding: 65px 25px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f5e5e8, #fbf4ed);
+    border: 1px solid var(--border);
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+}
+
+.hero-panel h1 {
+    margin: 12px 0;
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+}
+
+.hero-description {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--muted);
+}
+
+.catalogue-section {
+    padding: 55px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.section-heading h2 {
+    margin: 8px 0;
+    font-size: 2rem;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    min-height: 280px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(72, 46, 61, 0.14);
+}
+
+.service-category {
+    align-self: flex-start;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--rose-light);
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.service-card h3 {
+    margin: 18px 0 8px;
+    font-size: 1.35rem;
+}
+
+.service-description {
+    color: var(--muted);
+    font-size: 0.92rem;
+    flex-grow: 1;
+}
+
+.service-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.service-meta strong {
+    color: var(--primary);
+    font-size: 1.15rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.message-error,
+.message-info {
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+.message-error {
+    color: var(--danger);
+}
+
+.message-info {
+    color: var(--muted);
+}
+
+.site-footer {
+    margin-top: 30px;
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive service catalogue */
+@media (max-width: 850px) {
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-panel {
+        padding: 42px 20px;
+    }
+}
+
+/* =========================================
+   APPOINTMENT BOOKING PAGE
+   ========================================= */
+
+.booking-hero {
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f5e5e8, #fbf4ed);
+    border: 1px solid var(--border);
+}
+
+.booking-hero h1 {
+    margin: 12px 0;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+}
+
+.booking-hero > p:last-child {
+    color: var(--muted);
+}
+
+.booking-panel {
+    width: min(100%, 720px);
+    margin: 35px auto;
+    padding: 35px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.selected-service {
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+}
+
+.selected-service h2 {
+    margin: 8px 0;
+    font-size: 1.65rem;
+}
+
+.selected-service > p:not(.eyebrow) {
+    color: var(--muted);
+}
+
+.booking-panel > h2,
+.available-times h2 {
+    font-size: 1.45rem;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 20px 0;
+}
+
+.booking-form label {
+    margin-top: 10px;
+}
+
+.booking-form select,
+.booking-form input {
+    margin-bottom: 10px;
+}
+
+.available-times {
+    padding-top: 25px;
+    margin-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.available-times > p {
+    color: var(--muted);
+}
+
+.message-success {
+    margin: 20px 0;
+    padding: 17px 20px;
+    border: 1px solid #b8d8c3;
+    border-radius: 10px;
+    background: #eef8f1;
+    color: var(--success);
+}
+
+.back-link {
+    margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+    .booking-panel {
+        padding: 22px 17px;
+    }
+
+    .selected-service {
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   GLOWWELL PREMIUM DESIGN UPGRADE
+   ========================================= */
+
+/* 1. Premium navigation */
+.site-header {
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    border: 1px solid rgba(189, 155, 104, 0.25);
+    box-shadow: 0 15px 45px rgba(72, 46, 61, 0.10);
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.nav-links a {
+    padding: 9px 13px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: var(--rose-light);
+    text-decoration: none;
+}
+
+/* 2. Luxury hero sections */
+.hero-panel,
+.booking-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid rgba(220, 190, 158, 0.30);
+    border-radius: 26px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(199, 143, 155, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            120deg,
+            #382633,
+            #684354 60%,
+            #815b69
+        );
+
+    box-shadow: 0 25px 65px rgba(72, 46, 61, 0.19);
+}
+
+/* Decorative concentric circles */
+.hero-panel::before,
+.booking-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 330px;
+    height: 330px;
+    right: -100px;
+    top: -175px;
+    border: 1px solid rgba(239, 210, 170, 0.35);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 28px rgba(239, 210, 170, 0.05),
+        0 0 0 58px rgba(239, 210, 170, 0.04),
+        0 0 0 90px rgba(239, 210, 170, 0.03);
+}
+
+/* Hero typography */
+.hero-panel .eyebrow,
+.booking-hero .eyebrow {
+    color: #e9c89e;
+    letter-spacing: 4px;
+}
+
+.hero-panel h1,
+.booking-hero h1 {
+    color: #fffaf7;
+    font-weight: 500;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.hero-description,
+.booking-hero > p:last-child {
+    color: rgba(255, 250, 247, 0.82);
+    max-width: 650px;
+}
+
+/* 3. More refined service cards */
+.service-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eadde0;
+    border-radius: 19px;
+    box-shadow: 0 12px 35px rgba(72, 46, 61, 0.07);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Champagne accent at the top of each card */
+.service-card::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        #bd9b68,
+        #d8b5ae,
+        #684354
+    );
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4b8b6;
+    box-shadow: 0 24px 50px rgba(72, 46, 61, 0.15);
+}
+
+.service-category {
+    border: 1px solid #e9d1d4;
+    background: #f8edef;
+    color: #684354;
+    letter-spacing: 0.4px;
+}
+
+.section-heading h2 {
+    letter-spacing: -0.7px;
+}
+
+.service-meta strong {
+    color: #805166;
+    font-size: 1.2rem;
+}
+
+/* 4. Premium booking panel */
+.booking-panel {
+    width: min(100%, 790px);
+    margin: -22px auto 45px;
+    position: relative;
+    border-radius: 23px;
+    border: 1px solid rgba(189, 155, 104, 0.25);
+    box-shadow: 0 25px 65px rgba(72, 46, 61, 0.13);
+}
+
+/* Selected treatment card */
+.selected-service {
+    padding: 28px;
+    border-radius: 16px;
+    border-left: 5px solid #bd9b68;
+    background: linear-gradient(
+        135deg,
+        #faf0ed,
+        #f5e7e9,
+        #fbf8f4
+    );
+}
+
+.selected-service h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+}
+
+.selected-service .eyebrow {
+    color: #a17c4f;
+}
+
+/* 5. Better booking inputs */
+.booking-form select,
+.booking-form input {
+    padding: 15px 16px;
+    border-radius: 11px;
+    border: 1px solid #e5d4d9;
+    background: #fdfaf9;
+    font-size: 1rem;
+}
+
+.booking-form select:focus,
+.booking-form input:focus {
+    border-color: #bd9b68;
+    box-shadow: 0 0 0 4px rgba(189, 155, 104, 0.13);
+}
+
+/* Elegant buttons */
+.booking-form button,
+.service-card .btn-primary {
+    border-radius: 11px;
+    background: linear-gradient(
+        120deg,
+        #684354,
+        #493044
+    );
+    box-shadow: 0 8px 20px rgba(72, 46, 61, 0.17);
+    transition: all 0.25s ease;
+}
+
+.booking-form button:hover,
+.service-card .btn-primary:hover {
+    background: linear-gradient(
+        120deg,
+        #80576b,
+        #684354
+    );
+    box-shadow: 0 12px 27px rgba(72, 46, 61, 0.23);
+    transform: translateY(-3px);
+}
+
+/* 6. Available appointment times */
+.available-times {
+    scroll-margin-top: 28px;
+    padding: 28px;
+    border: 1px solid #e8d4d5;
+    border-radius: 17px;
+    background: linear-gradient(
+        135deg,
+        #fbf3ef,
+        #f8edef
+    );
+    animation: bookingReveal 0.55s ease both;
+}
+
+.available-times h2 {
+    font-size: 1.65rem;
+    color: #493044;
+}
+
+/* Smooth reveal */
+@keyframes bookingReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 7. Improved footer */
+.site-footer {
+    border-top: 1px solid #e7d9d8;
+    color: #807078;
+}
+
+/* 8. Responsive improvements */
+@media (max-width: 600px) {
+    .hero-panel,
+    .booking-hero {
+        border-radius: 18px;
+        padding: 40px 18px;
+    }
+
+    .booking-panel {
+        margin-top: 20px;
+        padding: 22px 17px;
+    }
+
+    .available-times {
+        padding: 19px;
+    }
+
+    .brand {
+        font-size: 1.7rem;
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   CUSTOMER APPOINTMENT MANAGEMENT
+   ========================================= */
+
+.appointments-section {
+    width: min(100%, 1050px);
+    margin: 40px auto;
+}
+
+.appointments-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.appointments-heading h2 {
+    margin: 6px 0;
+    font-size: 1.8rem;
+}
+
+.appointments-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.appointment-card {
+    padding: 26px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.appointment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(72, 46, 61, 0.13);
+}
+
+.appointment-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.appointment-label {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.appointment-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.status-pending {
+    color: #8b672d;
+    background: #fbf2df;
+}
+
+.status-confirmed {
+    color: #34734e;
+    background: #e8f4eb;
+}
+
+.status-completed {
+    color: #5d5279;
+    background: #f0edf8;
+}
+
+.status-cancelled {
+    color: #9b414c;
+    background: #fbecef;
+}
+
+.appointment-card h3 {
+    margin: 20px 0 8px;
+    font-size: 1.5rem;
+}
+
+.appointment-staff {
+    color: var(--muted);
+    font-size: 0.93rem;
+}
+
+.appointment-details {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--cream);
+}
+
+.appointment-details p {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 8px 0;
+    color: var(--text);
+    font-size: 0.91rem;
+}
+
+.appointment-details strong {
+    color: var(--primary);
+}
+
+.cancel-form {
+    margin-top: 18px;
+}
+
+.btn-cancel {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #e4bdc3;
+    border-radius: 9px;
+    background: #fff1f2;
+    color: #9b414c;
+    font-weight: 600;
+}
+
+.btn-cancel:hover {
+    background: #f7dfe3;
+    color: #843440;
+}
+
+.cancellation-note {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+.empty-appointments {
+    padding: 55px 25px;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.empty-appointments h2 {
+    font-size: 1.8rem;
+}
+
+.empty-appointments p {
+    margin-bottom: 25px;
+    color: var(--muted);
+}
+
+@media (max-width: 750px) {
+    .appointments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .appointments-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+    .appointment-card {
+        padding: 19px;
+    }
+
+    .appointment-details p {
+        flex-direction: column;
+        gap: 2px;
+    }
+}
+
+/* =========================================
+   GLOWWELL STAFF DASHBOARD
+   ========================================= */
+
+.staff-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 55px 25px;
+    text-align: center;
+    border-radius: 24px;
+    background: linear-gradient(120deg, #382633, #684354, #815b69);
+    box-shadow: 0 22px 55px rgba(72, 46, 61, 0.17);
+}
+
+.staff-hero .eyebrow {
+    color: #e9c89e;
+}
+
+.staff-hero h1 {
+    color: #fffaf7;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+}
+
+.staff-hero > p:not(.eyebrow) {
+    color: rgba(255, 250, 247, 0.85);
+}
+
+.staff-job-title {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 18px;
+    border: 1px solid rgba(239, 210, 170, 0.45);
+    border-radius: 25px;
+    color: #f0d7b6;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.staff-content {
+    width: min(100%, 1050px);
+    margin: 40px auto;
+}
+
+.staff-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 0 20px;
+}
+
+.staff-section-heading h2 {
+    margin: 5px 0;
+    font-size: 1.8rem;
+}
+
+.working-hours-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.working-day-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--white);
+    box-shadow: 0 7px 20px rgba(72, 46, 61, 0.05);
+}
+
+.working-day-card strong {
+    color: var(--primary-dark);
+}
+
+.working-day-card span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.closed-day {
+    background: #f7f3f2;
+}
+
+.btn-action {
+    width: 100%;
+    margin-top: 18px;
+    border-radius: 9px;
+    background: linear-gradient(120deg, #684354, #493044);
+    box-shadow: 0 7px 18px rgba(72, 46, 61, 0.12);
+}
+
+.btn-action:hover {
+    background: #80576b;
+}
+
+@media (max-width: 750px) {
+    .working-hours-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .working-hours-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .staff-hero {
+        padding: 40px 18px;
+    }
+}
+/* Automatically position the confirmed appointment in view */
+.appointment-card {
+    scroll-margin-top: 30px;
+}
+
+/* =========================================
+   GLOWWELL ADMINISTRATOR DASHBOARD
+   ========================================= */
+
+.admin-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 55px 40px;
+    border-radius: 24px;
+    background: linear-gradient(120deg, #382633, #684354, #815b69);
+    box-shadow: 0 22px 55px rgba(72, 46, 61, 0.17);
+}
+
+.admin-hero .eyebrow {
+    color: #e9c89e;
+}
+
+.admin-hero h1 {
+    color: #fffaf7;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.admin-hero > div > p:last-child {
+    max-width: 600px;
+    color: rgba(255, 250, 247, 0.85);
+}
+
+.admin-date {
+    color: #f0d7b6;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.admin-content {
+    width: min(100%, 1120px);
+    margin: 40px auto;
+}
+
+.admin-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 38px 0 20px;
+}
+
+.admin-section-heading h2 {
+    margin: 5px 0;
+    font-size: 1.8rem;
+}
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 19px;
+}
+
+.admin-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--gold);
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 0.89rem;
+    font-weight: 600;
+}
+
+.admin-stat-card strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.stat-description {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.booking-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.booking-summary-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 23px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    background: var(--white);
+}
+
+.booking-summary-card span {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.booking-summary-card strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 2rem;
+}
+
+.pending-summary {
+    border-left: 4px solid #bd9b68;
+}
+
+.confirmed-summary {
+    border-left: 4px solid #6eaa84;
+}
+
+.admin-text-link {
+    font-size: 0.9rem;
+}
+
+.admin-table-wrapper {
+    overflow-x: auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.admin-table th {
+    padding: 17px 15px;
+    background: #f6edf0;
+    color: var(--primary-dark);
+    text-align: left;
+    font-size: 0.84rem;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    padding: 16px 15px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tbody tr:hover {
+    background: #fdf8f7;
+}
+
+.admin-management-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.admin-management-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 175px;
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.admin-management-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(72, 46, 61, 0.13);
+    text-decoration: none;
+}
+
+.management-icon {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+}
+
+.admin-management-card strong {
+    color: var(--primary-dark);
+    font-size: 1.02rem;
+}
+
+.admin-management-card > span:last-child {
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+@media (max-width: 850px) {
+    .admin-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-management-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px 22px;
+    }
+
+    .admin-date {
+        white-space: normal;
+    }
+
+    .booking-summary-grid,
+    .admin-management-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-stats-grid {
+        gap: 12px;
+    }
+
+    .admin-stat-card {
+        padding: 17px;
+    }
+
+    .admin-stat-card strong {
+        font-size: 2rem;
+    }
+
+    .admin-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* =========================================
+   CUSTOMER MANAGEMENT
+   ========================================= */
+
+.customer-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.customer-summary-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 23px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.customer-summary-card span {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.customer-summary-card strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+
+.status-active {
+    background: #e8f4eb;
+    color: #34734e;
+}
+
+.status-inactive {
+    background: #fbecef;
+    color: #9b414c;
+}
+
+.customer-status-button {
+    min-width: 105px;
+    padding: 9px 13px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.deactivate-button {
+    background: #fff0f1;
+    color: #9b414c;
+}
+
+.deactivate-button:hover {
+    background: #f7dfe3;
+    transform: translateY(-1px);
+}
+
+.activate-button {
+    background: #e8f4eb;
+    color: #34734e;
+}
+
+.activate-button:hover {
+    background: #d6ebdc;
+    transform: translateY(-1px);
+}
+
+#customer-1 {
+    scroll-margin-top: 30px;
+}
+
+@media (max-width: 650px) {
+    .customer-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   STAFF MANAGEMENT
+   ========================================= */
+
+.staff-registration-panel {
+    margin: 35px 0;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.staff-registration-panel h2 {
+    font-size: 1.65rem;
+}
+
+.staff-registration-form {
+    margin-top: 20px;
+}
+
+.staff-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px 22px;
+}
+
+.staff-form-grid label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+.staff-form-grid input {
+    display: block;
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fffdfc;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.staff-form-grid input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(189, 155, 104, 0.13);
+}
+
+.staff-password-field {
+    grid-column: 1 / -1;
+}
+
+.staff-registration-form > button {
+    margin-top: 20px;
+    width: auto;
+    min-width: 220px;
+}
+
+#staff-1 {
+    scroll-margin-top: 30px;
+}
+
+@media (max-width: 650px) {
+    .staff-registration-panel {
+        padding: 22px 17px;
+    }
+
+    .staff-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .staff-password-field {
+        grid-column: auto;
+    }
+
+    .staff-registration-form > button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   SERVICE MANAGEMENT
+   ========================================= */
+
+.service-management-panel {
+    margin: 35px 0;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.service-management-panel h2 {
+    font-size: 1.65rem;
+}
+
+.service-management-form {
+    margin-top: 20px;
+}
+
+.service-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px 22px;
+}
+
+.service-form-grid label,
+.service-management-form > label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--primary-dark);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.service-form-grid input,
+.service-management-form textarea {
+    display: block;
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fffdfc;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.service-management-form textarea {
+    resize: vertical;
+    margin-bottom: 18px;
+}
+
+.service-form-grid input:focus,
+.service-management-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(189, 155, 104, 0.13);
+}
+
+.service-management-form > button {
+    min-width: 180px;
+}
+
+.service-action-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.service-edit-link {
+    display: inline-block;
+    padding: 8px 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--cream);
+    font-size: 0.82rem;
+}
+
+.service-edit-link:hover {
+    background: var(--rose-light);
+    text-decoration: none;
+}
+
+.service-action-group form {
+    margin: 0;
+}
+
+#service-1,
+#service-2,
+#service-3,
+#service-4,
+#service-5,
+#service-6,
+#service-7,
+#service-8 {
+    scroll-margin-top: 30px;
+}
+
+@media (max-width: 650px) {
+    .service-management-panel {
+        padding: 22px 17px;
+    }
+
+    .service-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-management-form > button {
+        width: 100%;
+    }
+
+    .service-action-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* =========================================
+   ADMIN APPOINTMENT MANAGEMENT
+   ========================================= */
+
+.appointment-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.appointment-summary-card {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.appointment-summary-card > span {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.appointment-summary-card > strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.completed-summary {
+    border-top-color: #8677a7;
+}
+
+.cancelled-summary {
+    border-top-color: #bd7880;
+}
+
+.appointment-action-group {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.inline-action-form {
+    margin: 0;
+}
+
+.inline-action-form .customer-status-button {
+    min-width: 75px;
+}
+
+#appointment-1 {
+    scroll-margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+    .appointment-summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .appointment-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================
+   BUSINESS REPORTS AND ANALYTICS
+   ========================================= */
+
+.report-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.report-heading h2 {
+    margin: 5px 0;
+    font-size: 1.75rem;
+}
+
+.report-print-button {
+    padding: 11px 19px;
+    border: 1px solid var(--gold);
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+}
+
+.report-print-button:hover {
+    background: var(--rose-light);
+    color: var(--primary-dark);
+}
+
+.report-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.report-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 21px;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.report-stat-card span {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.report-stat-card strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.report-section {
+    margin-top: 35px;
+    padding: 29px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.report-section .report-heading {
+    margin-bottom: 10px;
+}
+
+.report-description {
+    margin: 5px 0 25px;
+    color: var(--muted);
+    font-size: 0.91rem;
+}
+
+.report-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-top: 25px;
+}
+
+.report-bar-row {
+    display: grid;
+    grid-template-columns: 85px minmax(0, 1fr) 28px;
+    gap: 13px;
+    align-items: center;
+}
+
+.report-bar-label {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.report-bar-track {
+    width: 100%;
+    height: 13px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #f1e9e9;
+}
+
+.report-bar-fill {
+    height: 100%;
+    min-width: 0;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #bd9b68, #80566a);
+    transition: width 0.6s ease;
+}
+
+.report-bar-value {
+    color: var(--primary-dark);
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.service-report-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.service-report-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.service-report-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.service-report-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.service-report-info > div strong {
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+}
+
+.service-report-info > div span {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.service-report-info > strong {
+    color: var(--primary);
+    white-space: nowrap;
+    font-size: 0.86rem;
+}
+
+.financial-report-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+    margin-top: 22px;
+}
+
+.financial-report-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #fff, #fbf5f3);
+}
+
+.financial-report-card span {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.financial-report-card strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.financial-report-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.report-disclaimer {
+    margin-top: 20px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--gold);
+    background: var(--cream);
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.report-footer-note {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.84rem;
+}
+
+.report-footer-note p {
+    margin: 5px;
+}
+
+@media (max-width: 900px) {
+    .report-stat-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .financial-report-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .report-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .report-section {
+        padding: 20px 16px;
+    }
+
+    .report-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .report-bar-row {
+        grid-template-columns: 65px minmax(0, 1fr) 22px;
+        gap: 8px;
+    }
+
+    .report-bar-label {
+        font-size: 0.75rem;
+    }
+
+    .service-report-info {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Print-friendly report */
+@media print {
+    .site-header,
+    .site-footer,
+    .report-print-button {
+        display: none !important;
+    }
+
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .admin-hero,
+    .report-section,
+    .report-stat-card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .admin-hero {
+        background: #684354 !important;
+        print-color-adjust: exact;
+    }
+}
+
+/* =========================================
+   JAVASCRIPT PASSWORD INTERACTIVITY
+   ========================================= */
+
+form .password-toggle {
+    display: inline-block;
+    width: auto;
+    margin: -10px 0 17px;
+    padding: 8px 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--rose-light);
+    color: var(--primary-dark);
+    font-size: 0.82rem;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+form .password-toggle:hover {
+    background: #ead5da;
+    color: var(--primary-dark);
+    transform: none;
+}
+
+.password-feedback {
+    margin: -5px 0 18px;
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.feedback-error {
+    color: var(--danger);
+}
+
+.feedback-success {
+    color: var(--success);
+}
+
+.feedback-neutral {
+    color: var(--muted);
+}
+
+/* =========================================
+   PREMIUM CUSTOMER DASHBOARD
+   ========================================= */
+
+.customer-hero-button {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 13px 24px;
+    border: 1px solid rgba(233, 200, 158, 0.65);
+    border-radius: 10px;
+    background: #e9c89e;
+    color: #382633;
+    font-weight: 700;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.customer-hero-button:hover {
+    background: #f2ddbd;
+    color: #382633;
+    text-decoration: none;
+    transform: translateY(-3px);
+}
+
+.customer-dashboard-content {
+    width: min(100%, 1050px);
+    margin: 45px auto;
+}
+
+.customer-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.customer-dashboard-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.customer-dashboard-stat span {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.customer-dashboard-stat strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.customer-dashboard-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 30px 0 45px;
+}
+
+.customer-action-card {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    min-height: 180px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.customer-action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(72, 46, 61, 0.13);
+    text-decoration: none;
+}
+
+.customer-action-number {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+}
+
+.customer-action-card strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 1.3rem;
+}
+
+.customer-action-card > span:last-child {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.upcoming-appointments {
+    margin-top: 40px;
+}
+
+.upcoming-appointments .appointments-heading {
+    margin-bottom: 25px;
+}
+
+@media (max-width: 700px) {
+    .customer-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-dashboard-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   PAYMENT MANAGEMENT
+   ========================================= */
+
+.payment-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 30px 0;
+}
+
+.payment-summary-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.payment-summary-card span {
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.payment-summary-card strong {
+    color: var(--primary-dark);
+    font-family: Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+}
+
+.payment-information {
+    margin: 20px 0;
+    padding: 16px 19px;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    background: var(--cream);
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+.payment-record-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.payment-record-card {
+    padding: 26px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 30px;
+}
+
+.payment-record-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.payment-record-heading h3 {
+    margin: 9px 0;
+    font-size: 1.4rem;
+}
+
+.payment-record-heading p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.payment-record-details {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+    padding: 18px;
+    border-radius: 12px;
+    background: var(--cream);
+}
+
+.payment-record-details p {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+    font-size: 0.86rem;
+}
+
+.payment-record-details strong {
+    color: var(--primary);
+}
+
+.payment-entry-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 15px;
+    margin: 0;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fffdfc;
+}
+
+.payment-entry-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--primary-dark);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.payment-entry-form select {
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+}
+
+.payment-entry-form button {
+    min-width: 190px;
+    padding: 12px 15px;
+}
+
+.status-refunded {
+    background: #f0edf8;
+    color: #5d5279;
+}
+
+@media (max-width: 900px) {
+    .payment-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .payment-record-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .payment-entry-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .payment-entry-form button {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .payment-record-card {
+        padding: 18px;
+    }
+
+    .payment-record-heading {
+        flex-direction: column;
+    }
+
+    .payment-record-details,
+    .payment-entry-form {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-entry-form button {
+        grid-column: auto;
+    }
+
+    .payment-summary-card strong {
+        font-size: 1.55rem;
+    }
+}
