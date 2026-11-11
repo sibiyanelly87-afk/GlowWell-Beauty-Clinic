@@ -1,0 +1,27 @@
+
+# Database credentials
+config/db.php
+.env
+.env.*
+
+# Database backups and exports
+*.sql
+*.sql.zip
+
+# Project archives
+*.zip
+
+# Temporary and sensitive files
+test_db.php
+reset_customer_password.php
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
