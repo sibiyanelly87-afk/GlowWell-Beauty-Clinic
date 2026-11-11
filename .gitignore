@@ -6,6 +6,7 @@ config/db.php
 
 # Database backups and exports
 *.sql
+!database/schema.sql
 *.sql.zip
 
 # Project archives
